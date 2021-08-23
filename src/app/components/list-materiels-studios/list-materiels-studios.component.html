@@ -1,0 +1,42 @@
+<div class="container col-10 mt-4">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3">Liste des categories de materiels</span>
+            <button class="btn btn-dark btn-md float-right" routerLink="/create-materiels-studio">Ajout categories</button>
+            <table *ngIf="listCategMat.length > 0" class="table table-striped mt-4">
+                <thead>
+                  <tr>
+                    <th>categories materiel</th>
+                    <th>Libelle</th>
+                    <th>Modél</th>
+                    <th>Description</th>
+                    <th>Prix location</th>
+                    <th>Quantité disponible</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let categMat of listCategMat">
+                    <!-- <td *ngFor="let listCategMate of listCategMateriel">
+                        <span *ngIf="categMat.categoriMateriel == listCategMate.id">
+                            {{listCategMate.libelle}}
+                        </span>
+                    </td> -->
+                    <td>{{categMat.categoriMateriel}}</td>
+                    <td>{{categMat.libelle}}</td>
+                    <td>{{categMat.model}}</td>
+                    <td>{{categMat.description}}</td>  
+                    <td>{{categMat.prixLocation}} FCFA</td>
+                    <td>{{categMat.qteDisponible}}</td>  
+                    <td>
+                        <i class="fas fa-edit fa-lg text-info mr-3" [routerLink]="['/create-materiels-studio/', categMat.id]"></i>
+                        <i (click)="deleteCategorrieMateriel(categMat.id)" class="fas fa-trash-alt fa-lg text-danger"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        
+    </div>
+</div>
+

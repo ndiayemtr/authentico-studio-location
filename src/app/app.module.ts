@@ -14,13 +14,17 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CreateMaterielsStudiosComponent } from './components/create-materiels-studios/create-materiels-studios.component';
+import { ListMaterielsStudiosComponent } from './components/list-materiels-studios/list-materiels-studios.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateCategoriesMaterielsComponent,
     ListCategoriesMaterielsComponent,
-    NavbarComponent
+    NavbarComponent,
+    CreateMaterielsStudiosComponent,
+    ListMaterielsStudiosComponent
   ],
   imports: [
     BrowserModule,
